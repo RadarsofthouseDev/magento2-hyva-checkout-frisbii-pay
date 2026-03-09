@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Radarsofthouse Reepay - Hyvä Checkout Integration
+ * Loads CSS for Reepay payment methods
+ * Loads Alpine components for payment methods
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<css src="Radarsofthouse_HyvaCheckoutFrisbii::css/reepay.css" />
+	</head>
+    <body>
+        <referenceContainer name="after.body.start">
+            <block name="reepay.card.selector.js"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::js/reepay-card-selector.phtml"
+                   before="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

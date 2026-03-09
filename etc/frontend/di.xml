@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Hyva\CompatModuleFallback\Model\CompatModuleRegistry">
+        <arguments>
+            <argument name="compatModules" xsi:type="array">
+                <item name="hyva-magento2-checkout-reepay" xsi:type="array">
+                    <item name="original_module" xsi:type="string">Radarsofthouse_Reepay</item>
+                    <item name="compat_module" xsi:type="string">Radarsofthouse_HyvaCheckoutFrisbii</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Hyva\Checkout\Model\Magewire\Payment\PlaceOrderServiceProvider">
+        <arguments>
+            <argument name="placeOrderServiceList" xsi:type="array">
+                <item name="reepay_payment" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_mobilepay" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_vipps" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_viabill" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_anyday" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_applepay" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_paypal" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_klarnapaynow" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_klarnapaylater" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_klarnasliceit" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_klarnadirectbanktransfer" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_klarnadirectdebit" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_forbrugsforeningen" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_googlepay" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_ideal" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_blik" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_p24" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_verkkopankki" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_giropay" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_sepa" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_bancontact" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_santander" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_eps" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_estoniabanks" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_latviabanks" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_lithuaniabanks" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_mbway" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_multibanco" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_mybank" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_payconiq" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_paysafecard" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_paysera" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_postfinance" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_satispay" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_trustly" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_wechatpay" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_banktransfer" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_cash" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_other" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_vippsepayment" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+                <item name="reepay_swish" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\Magewire\Checkout\Payment\ReepayPlaceOrderService</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

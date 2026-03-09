@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="checkout.payment.methods">
+            <block name="checkout.payment.method.reepay_payment"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_payment.phtml"
+                   as="reepay_payment">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_vipps"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_vipps.phtml"
+                   as="reepay_vipps">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_mobilepay"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_mobilepay.phtml"
+                   as="reepay_mobilepay">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_viabill"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_viabill.phtml"
+                   as="reepay_viabill">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_anyday"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_anyday.phtml"
+                   as="reepay_anyday">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_applepay"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_applepay.phtml"
+                   as="reepay_applepay">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_paypal"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_paypal.phtml"
+                   as="reepay_paypal">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_klarnapaynow"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_klarnapaynow.phtml"
+                   as="reepay_klarnapaynow">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_klarnapaylater"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_klarnapaylater.phtml"
+                   as="reepay_klarnapaylater">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_klarnasliceit"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_klarnasliceit.phtml"
+                   as="reepay_klarnasliceit">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_klarnadirectbanktransfer"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_klarnadirectbanktransfer.phtml"
+                   as="reepay_klarnadirectbanktransfer">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_klarnadirectdebit"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_klarnadirectdebit.phtml"
+                   as="reepay_klarnadirectdebit">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_forbrugsforeningen"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_forbrugsforeningen.phtml"
+                   as="reepay_forbrugsforeningen">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_googlepay"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_googlepay.phtml"
+                   as="reepay_googlepay">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_ideal"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_ideal.phtml"
+                   as="reepay_ideal">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_blik"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_blik.phtml"
+                   as="reepay_blik">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_p24"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_p24.phtml"
+                   as="reepay_p24">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_verkkopankki"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_verkkopankki.phtml"
+                   as="reepay_verkkopankki">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_giropay"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_giropay.phtml"
+                   as="reepay_giropay">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_sepa"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_sepa.phtml"
+                   as="reepay_sepa">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_bancontact"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_bancontact.phtml"
+                   as="reepay_bancontact">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_santander"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_santander.phtml"
+                   as="reepay_santander">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_eps"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_eps.phtml"
+                   as="reepay_eps">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_estoniabanks"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_estoniabanks.phtml"
+                   as="reepay_estoniabanks">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_latviabanks"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_latviabanks.phtml"
+                   as="reepay_latviabanks">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_lithuaniabanks"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_lithuaniabanks.phtml"
+                   as="reepay_lithuaniabanks">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_mbway"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_mbway.phtml"
+                   as="reepay_mbway">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_multibanco"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_multibanco.phtml"
+                   as="reepay_multibanco">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_mybank"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_mybank.phtml"
+                   as="reepay_mybank">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_payconiq"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_payconiq.phtml"
+                   as="reepay_payconiq">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_paysafecard"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_paysafecard.phtml"
+                   as="reepay_paysafecard">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_paysera"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_paysera.phtml"
+                   as="reepay_paysera">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_postfinance"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_postfinance.phtml"
+                   as="reepay_postfinance">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_satispay"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_satispay.phtml"
+                   as="reepay_satispay">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_trustly"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_trustly.phtml"
+                   as="reepay_trustly">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_wechatpay"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_wechatpay.phtml"
+                   as="reepay_wechatpay">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_banktransfer"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_banktransfer.phtml"
+                   as="reepay_banktransfer">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_cash"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_cash.phtml"
+                   as="reepay_cash">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_other"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_other.phtml"
+                   as="reepay_other">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_vippsepayment"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_vippsepayment.phtml"
+                   as="reepay_vippsepayment">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+            <block name="checkout.payment.method.reepay_swish"
+                   template="Radarsofthouse_HyvaCheckoutFrisbii::component/payment/method/reepay_swish.phtml"
+                   as="reepay_swish">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

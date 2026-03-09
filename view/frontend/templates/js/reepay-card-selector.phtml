@@ -1,0 +1,169 @@
+<?php
+
+/**
+ * Reepay Card Selector Alpine Component
+ * This script is loaded once in the page head to avoid CSP issues during Magewire DOM morphing
+ */
+
+declare(strict_types=1);
+
+use Hyva\Theme\Model\ViewModelRegistry;
+use Hyva\Theme\ViewModel\HyvaCsp;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var ViewModelRegistry $viewModels */
+
+$viewModel = $block->getData('view_model');
+$hyvaCsp = $viewModels->require(HyvaCsp::class);
+?>
+<script>
+    function reepayCardSelector() {
+        return {
+            setCreditCardUrl: '',
+            removeCardUrl: '',
+            confirmMessage: '',
+            isLoading: false,
+
+            init() {
+                // Read URLs from data attributes
+                this.setCreditCardUrl = this.$el.dataset.setCreditCardUrl || '';
+                this.removeCardUrl = this.$el.dataset.removeCardUrl || '';
+                this.confirmMessage = this.$el.dataset.confirmMessage || 'Do you want to remove your saved card %1?';
+
+                // Set initial credit card on mount
+                const checkedCard = this.$el.querySelector('input[name="credit-card"]:checked');
+                if (checkedCard) {
+                    this.setCreditCard(checkedCard.value);
+                }
+            },
+
+            startLoader() {
+                if (this.isLoading) return;
+                this.isLoading = true;
+                if (typeof hyvaCheckout !== 'undefined' && hyvaCheckout.loader) {
+                    hyvaCheckout.loader.start();
+                }
+            },
+
+            stopLoader() {
+                if (!this.isLoading) return;
+                this.isLoading = false;
+                if (typeof hyvaCheckout !== 'undefined' && hyvaCheckout.loader) {
+                    hyvaCheckout.loader.stop();
+                }
+            },
+
+            setCreditCard(cid) {
+                this.startLoader();
+
+                const formData = new FormData();
+                formData.append('cid', cid);
+
+                fetch(this.setCreditCardUrl, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('setCreditCard response:', data);
+                        if (data.status === 'failure') {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Ajax error:', error);
+                    })
+                    .finally(() => {
+                        this.stopLoader();
+                    });
+            },
+
+            handleCardChange(event) {
+                if (this.isLoading) {
+                    event.preventDefault();
+                    return;
+                }
+                this.setCreditCard(event.target.value);
+            },
+
+            handleRemoveCard(event) {
+                if (this.isLoading) {
+                    event.preventDefault();
+                    return;
+                }
+                const btn = event.currentTarget;
+                const cid = btn.dataset.cid;
+                const cardNumber = btn.dataset.card;
+                if (confirm(this.confirmMessage.replace('%1', cardNumber))) {
+                    this.removeCard(cid, btn);
+                }
+            },
+
+            removeCard(cid, btnElement) {
+                this.startLoader();
+
+                const self = this;
+                const formData = new FormData();
+                formData.append('cid', cid);
+
+                fetch(this.removeCardUrl, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            // Hide the card container
+                            const container = btnElement.closest('.credit-card-container');
+                            if (container) {
+                                container.style.display = 'none';
+                            }
+
+                            // Select another card if the removed one was selected
+                            self.$nextTick(() => {
+                                const checkedCard = self.$el.querySelector('input[name="credit-card"]:checked');
+                                if (!checkedCard || checkedCard.closest('.credit-card-container').style.display === 'none') {
+                                    const visibleContainers = self.$el.querySelectorAll('.credit-card-container');
+                                    for (const cont of visibleContainers) {
+                                        if (cont.style.display !== 'none') {
+                                            const radio = cont.querySelector('input[name="credit-card"]');
+                                            if (radio) {
+                                                radio.checked = true;
+                                                self.setCreditCard(radio.value);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                        } else if (data.status === 'failure') {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Ajax error:', error);
+                    })
+                    .finally(() => {
+                        self.stopLoader();
+                    });
+            }
+        };
+    }
+
+    window.addEventListener('alpine:init', () => {
+        Alpine.data('reepayCardSelector', reepayCardSelector);
+    }, {
+        once: true
+    });
+</script>
+<?php $hyvaCsp->registerInlineScript() ?>

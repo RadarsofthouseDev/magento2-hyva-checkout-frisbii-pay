@@ -1,0 +1,82 @@
+<?php
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var PaymentConfig $viewModel */
+
+$viewModel = $block->getViewModel();
+$methodCode = 'reepay_payment';
+$instruction = $viewModel->getInstruction($methodCode);
+$paymentIcons = $viewModel->getPaymentIcons();
+$savedCreditCards = $viewModel->getSavedCreditCards();
+$savedCreditCardInQuote = $viewModel->getSavedCreditCardFromQuote();
+$allAllowedPayments = !empty($savedCreditCards) ? $viewModel->getAllowedPayments() : [];
+
+$selectedKey = 0;
+foreach ($savedCreditCards as $key => $savedCreditCard) {
+    if ($savedCreditCard['id'] == $savedCreditCardInQuote) {
+        $selectedKey = $key;
+    }
+}
+?>
+
+<div class="payment-method-content">
+    <?php if ($instruction): ?>
+        <p class="reepay-payment-instructions">
+            <?= $escaper->escapeHtml(__($instruction)) ?>
+        </p>
+    <?php endif; ?>
+
+    <?php if (!empty($paymentIcons)): ?>
+        <div class="reepay-payment-icons">
+            <?php foreach ($paymentIcons as $iconUrl): ?>
+                <img src="<?= $escaper->escapeUrl($iconUrl) ?>"
+                    class="reepay-payment-icon" />
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (!empty($savedCreditCards)): ?>
+        <div class="select-credit-card"
+            x-data="reepayCardSelector"
+            data-set-credit-card-url="<?= $escaper->escapeHtmlAttr($viewModel->getSetCreditCardUrl()) ?>"
+            data-remove-card-url="<?= $escaper->escapeHtmlAttr($viewModel->getRemoveCardUrl()) ?>"
+            data-confirm-message="<?= $escaper->escapeHtmlAttr(__('Do you want to remove your saved card %1?')) ?>">
+            <?php foreach ($savedCreditCards as $key => $savedCreditCard): ?>
+                <div class="credit-card-container"
+                    data-card-id="<?= $escaper->escapeHtmlAttr($savedCreditCard['id']) ?>">
+                    <label class="credit-card">
+                        <?= $escaper->escapeHtml($allAllowedPayments[$savedCreditCard['card_type']] .
+                            " : " . $savedCreditCard['masked_card']); ?>
+                        <input type="radio"
+                            name="credit-card"
+                            x-on:change="handleCardChange"
+                            <?= ($key == $selectedKey && $savedCreditCardInQuote != "new") ? 'checked="checked"' : ""; ?>
+                            value="<?= $escaper->escapeHtml($savedCreditCard['id']); ?>">
+                        <span class="checkmark"></span>
+                    </label>
+                    <span class="remove-credit-card-btn"
+                        x-on:click="handleRemoveCard"
+                        data-cid="<?= $escaper->escapeHtmlAttr($savedCreditCard['id']) ?>"
+                        data-card="<?= $escaper->escapeHtmlAttr($savedCreditCard['masked_card']) ?>">
+                    </span>
+                </div>
+            <?php endforeach; ?>
+            <div class="credit-card-container">
+                <label class="credit-card"><?= $escaper->escapeHtml(__('New credit card')) ?>
+                    <input type="radio"
+                        name="credit-card"
+                        x-on:change="handleCardChange"
+                        <?= ($savedCreditCardInQuote == "new") ? 'checked="checked"' : ""; ?>
+                        value="new">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    <?php endif; ?>
+
+</div>

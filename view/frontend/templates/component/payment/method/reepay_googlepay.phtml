@@ -1,0 +1,31 @@
+<?php
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Radarsofthouse\HyvaCheckoutFrisbii\ViewModel\PaymentConfig;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var PaymentConfig $viewModel */
+
+$viewModel = $block->getViewModel();
+$methodCode = 'reepay_googlepay';
+$instruction = $viewModel->getInstruction($methodCode);
+$iconUrl = $viewModel->getPaymentMethodIcon($methodCode, 'googlepay');
+?>
+
+<div class="payment-method-content">
+    <?php if ($instruction): ?>
+        <p class="reepay-payment-instructions">
+            <?= $escaper->escapeHtml(__($instruction)) ?>
+        </p>
+    <?php endif; ?>
+
+    <?php if ($iconUrl): ?>
+        <div class="reepay-payment-icons">
+            <img src="<?= $escaper->escapeUrl($iconUrl) ?>"
+                alt="<?= $escaper->escapeHtmlAttr(__('Google Pay')) ?>"
+                class="reepay-payment-icon" />
+        </div>
+    <?php endif; ?>
+</div>

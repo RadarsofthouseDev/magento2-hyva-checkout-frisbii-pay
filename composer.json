@@ -1,0 +1,27 @@
+{
+    "name": "radarsofthouse/magento2-hyva-checkout-frisbii-pay",
+    "description": "Frisbii Pay for Hyvä Checkout - Compatibility Module",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "email": "info@radarsofthouse.dk",
+            "name": "Radarsofthouse"
+        }
+    ],
+    "require": {
+        "hyva-themes/magento2-hyva-checkout": "^1.0"
+    },
+    "suggest": {
+        "radarsofthouse/reepay": "Either: Frisbii Pay Module ^1.2.67 (GitHub)",
+        "reepay-payment/reepay": "Or: Frisbii Pay Module ^1.2.67 (Adobe Marketplace)"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Radarsofthouse\\HyvaCheckoutFrisbii\\": ""
+        }
+    }
+}
