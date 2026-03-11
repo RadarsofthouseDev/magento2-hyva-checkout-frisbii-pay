@@ -2,7 +2,7 @@
     "name": "radarsofthouse/magento2-hyva-checkout-frisbii-pay",
     "description": "Frisbii Pay for Hyvä Checkout - Compatibility Module",
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "email": "info@radarsofthouse.dk",
