@@ -22,7 +22,7 @@ class RegisterModuleForHyvaConfig implements ObserverInterface
         $path = $this->componentRegistrar->getPath(ComponentRegistrar::MODULE, $moduleName);
 
         if ($path) {
-            $extensions[] = $path;
+            $extensions[] = ['src' => substr($path, strlen(BP) + 1)];
             $config->setData('extensions', $extensions);
         }
     }
